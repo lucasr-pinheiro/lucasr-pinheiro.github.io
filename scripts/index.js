@@ -10,6 +10,70 @@ window.addEventListener('scroll', function () {
   if (this.window.pageYOffset > 0) return navbar.classList.add('active');
   return navbar.classList.remove('active');
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar__links a, .mobile__links a');
+  let lastId; // Guarda o último id para evitar atualizações desnecessárias
+
+  function addActiveClass(section) {
+    if (section && section.id !== lastId) { // Verifica se a seção é válida e diferente da última ativa
+      lastId = section.id;
+      navLinks.forEach(link => {
+        link.classList.remove('active-link');
+        if (link.getAttribute('href') === '#' + section.id) {
+          link.classList.add('active-link');
+        }
+      });
+      // Atualiza a URL sem recarregar a página
+      history.pushState(null, null, '#' + section.id);
+    }
+  }
+
+  function getCurrentSection() {
+    let currentSection = null;
+    let minDiff = Number.MAX_VALUE;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - window.scrollY;
+      const sectionHeight = section.offsetHeight;
+
+      // Verifica se o usuário está no topo da página
+      if (window.scrollY < 100) {
+        currentSection = document.querySelector('header') || sections[0];
+        return;
+      }
+      
+      // Verifica se o usuário está no final da página
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        currentSection = document.querySelector('footer') || sections[sections.length - 1];
+        return;
+      }
+
+      if (sectionTop < minDiff && sectionTop > -window.innerHeight / 2) {
+        minDiff = sectionTop;
+        currentSection = section;
+      }
+    });
+
+    return currentSection;
+  }
+
+  window.addEventListener('scroll', () => {
+    const currentSection = getCurrentSection();
+    addActiveClass(currentSection);
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const sectionId = this.getAttribute('href').split('#')[1];
+      const section = document.getElementById(sectionId);
+      if (section) {
+        addActiveClass(section);
+      }
+    });
+  });
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var jobTitles = ['Engenheiro de Controle e Automação', 'Desenvolvedor Fullstack', 'Técnico de Informatica'];
