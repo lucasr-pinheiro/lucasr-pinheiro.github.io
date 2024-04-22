@@ -10,7 +10,7 @@ window.addEventListener('scroll', function () {
   if (this.window.pageYOffset > 0) return navbar.classList.add('active');
   return navbar.classList.remove('active');
 });
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.navbar__links a, .mobile__links a');
   let lastId; // Guarda o último id para evitar atualizações desnecessárias
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSection = document.querySelector('header') || sections[0];
         return;
       }
-      
+
       // Verifica se o usuário está no final da página
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         currentSection = document.querySelector('footer') || sections[sections.length - 1];
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   navLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       const sectionId = this.getAttribute('href').split('#')[1];
       const section = document.getElementById(sectionId);
       if (section) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var jobTitles = ['Engenheiro de Controle e Automação', 'Desenvolvedor Fullstack', 'Técnico de Informatica'];
   var currentIndex = -1;
   var jobTitleElement = document.getElementById('job-title');
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     jobTitleElement.textContent = '';
     jobTitleElement.style.width = '0';
 
-    var typingInterval = setInterval(function() {
+    var typingInterval = setInterval(function () {
       jobTitleElement.textContent += title[i];
       i++;
       if (i >= title.length) {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function deleteJobTitle() {
     var title = jobTitles[currentIndex];
     var i = title.length;
-    var deletingInterval = setInterval(function() {
+    var deletingInterval = setInterval(function () {
       jobTitleElement.textContent = jobTitleElement.textContent.slice(0, -1);
       i--;
       if (i <= 0) {
@@ -114,11 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // scripts/index.js
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var moreInfoLinks = document.querySelectorAll('.projects__info a');
 
-  moreInfoLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
+  moreInfoLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
       event.preventDefault();
 
       var projectInfo = event.target.parentNode;
@@ -135,22 +135,93 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const showMoreButton = document.getElementById('show-more');
   const showLessButton = document.getElementById('show-less');
-  const allItems = document.querySelectorAll('.skills__item');
-  const hiddenItems = document.querySelectorAll('.skills__item.hidden');
+  const skillItems = document.querySelectorAll('.skills__item');
 
-  showMoreButton.addEventListener('click', function() {
-    hiddenItems.forEach(item => {
-      item.classList.remove('hidden'); // Remove a classe 'hidden'
+  function showInitialItems() {
+    skillItems.forEach((item, index) => {
+      if (index < 4) {
+        item.classList.remove('hidden'); // Garante que os 4 primeiros itens sejam visíveis
+      } else {
+        item.classList.add('hidden'); // Esconde todos os itens após os 4 primeiros
+      }
+    });
+    showMoreButton.style.display = 'inline'; // Mostra o botão "Ver Todos"
+    showLessButton.style.display = 'none'; // Esconde o botão "Mostrar Menos"
+  }
+
+  function showAllItems() {
+    skillItems.forEach(item => {
+      item.classList.remove('hidden'); // Mostra todos os itens
     });
     showMoreButton.style.display = 'none'; // Esconde o botão "Ver Todos"
     showLessButton.style.display = 'inline'; // Mostra o botão "Mostrar Menos"
+  }
+
+  showMoreButton.addEventListener('click', showAllItems);
+  showLessButton.addEventListener('click', showInitialItems);
+
+  // Definindo a visibilidade inicial baseada no botão de rádio atualmente selecionado
+  if (document.getElementById('view-skills').checked) {
+    showInitialItems(); // Mostra apenas os 4 primeiros itens ao carregar
+  } else {
+    // Se a aba de certificados estiver selecionada, esconde todos os itens de habilidades
+    skillItems.forEach(item => {
+      item.classList.add('hidden');
+    });
+    showMoreButton.style.display = 'none'; // Esconde o botão "Ver Todos"
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const viewSkills = document.getElementById('view-skills');
+  const viewCertificates = document.getElementById('view-certificates');
+  const skillsList = document.getElementById('skills-list');
+  const certificatesList = document.getElementById('certificates-list');
+  const skillItems = skillsList.querySelectorAll('.skills__item');
+  const certificateItems = certificatesList.querySelectorAll('.certificates__item');
+  const showMoreButton = document.getElementById('show-more');
+  const showLessButton = document.getElementById('show-less');
+
+  function toggleVisibility(items, show, maxVisibleItems = Infinity) {
+    items.forEach((item, index) => {
+      if (index < maxVisibleItems) {
+        if (show) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      } else {
+        item.classList.add('hidden'); // Esconde os itens além do limite máximo definido
+      }
+    });
+  }
+
+  viewSkills.addEventListener('change', function() {
+    if (this.checked) {
+      toggleVisibility(skillItems, true, 4); // Exibe apenas as 4 primeiras habilidades
+      toggleVisibility(certificateItems, false);
+      showMoreButton.style.display = 'inline';
+      showLessButton.style.display = 'none';
+    }
   });
 
-  showLessButton.addEventListener('click', function() {
-    hiddenItems.forEach(item => {
-      item.classList.add('hidden'); // Adiciona a classe 'hidden' de volta
-    });
-    showLessButton.style.display = 'none'; // Esconde o botão "Mostrar Menos"
-    showMoreButton.style.display = 'inline'; // Mostra o botão "Ver Todos"
+  viewCertificates.addEventListener('change', function() {
+    if (this.checked) {
+      toggleVisibility(skillItems, false);
+      toggleVisibility(certificateItems, true);
+      showMoreButton.style.display = 'none';
+      showLessButton.style.display = 'none';
+    }
   });
+
+  // Inicialização baseada no estado inicial dos botões de rádio
+  if (viewSkills.checked) {
+    toggleVisibility(skillItems, true, 4); // Exibe apenas as 4 primeiras habilidades
+    toggleVisibility(certificateItems, false);
+    showMoreButton.style.display = 'inline';
+  } else if (viewCertificates.checked) {
+    toggleVisibility(skillItems, false);
+    toggleVisibility(certificateItems, true);
+    showMoreButton.style.display = 'none';
+  }
 });

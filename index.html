@@ -145,34 +145,23 @@
       </p>
     </div>
   </section>
+
+
+
+
   <section id="skills" class="skills">
+    <!-- Menu para alternar entre Skills e Certificados -->
+    <div class="skills-menu">
+      <input type="radio" id="view-skills" name="skills-certificates" checked>
+      <label for="view-skills">Habilidades</label>
+
+      <input type="radio" id="view-certificates" name="skills-certificates">
+      <label for="view-certificates">Formação</label>
+    </div>
     <div class="skills__content max-width">
-      <h2 class="tertiary-title">Minha caixinha de ferramentas</h2>
-      <p class="description">
-        Descubra as habilidades e ferramentas que domino e que me permitem
-        criar soluções criativas e funcionais para meus clientes.
-      </p>
-      <ul>
-        <li class="skills__item">
-          <div class="image-container">
-            <img src="assets/notebook.png" alt="Desenvolvimento Web" />
-          </div>
-          <h3>Desenvolvimento Web</h3>
-          <p>
-            Experiência ampla em HTML, CSS, JavaScript e frameworks modernos para criação de websites dinâmicos e
-            responsivos.
-          </p>
-        </li>
-        <li class="skills__item">
-          <div class="image-container">
-            <img src="assets/engenheiro.png" alt="Engenharia" />
-          </div>
-          <h3>Engenharia</h3>
-          <p>
-            Aplicação de conhecimentos técnicos para a resolução de problemas complexos em sistemas de automação e
-            controle.
-          </p>
-        </li>
+
+      <ul id="skills-list">
+
         <li class="skills__item">
           <div class="image-container">
             <img src="assets/nodejs.png" alt="Node Js" />
@@ -189,7 +178,8 @@
           </div>
           <h3>C#</h3>
           <p>
-            Proficiência em C# para desenvolvimento .NET, focando em aplicativos de desktop e backend de aplicações web.
+            Proficiência em C# para desenvolvimento .NET, focando em aplicativos de desktop e backend de aplicações
+            web.
           </p>
         </li>
         <li class="skills__item hidden">
@@ -198,7 +188,8 @@
           </div>
           <h3>SolidWorks</h3>
           <p>
-            Utilização de SolidWorks para modelagem 3D mecânica e elaboração de detalhamentos técnicos para fabricação.
+            Utilização de SolidWorks para modelagem 3D mecânica e elaboração de detalhamentos técnicos para
+            fabricação.
           </p>
         </li>
         <li class="skills__item hidden">
@@ -207,7 +198,8 @@
           </div>
           <h3>Indústria 4.0</h3>
           <p>
-            Implementação de soluções para a Indústria 4.0, focando em automação, robótica e integração de sistemas IoT.
+            Implementação de soluções para a Indústria 4.0, focando em automação, robótica e integração de sistemas
+            IoT.
           </p>
         </li>
         <li class="skills__item hidden">
@@ -261,21 +253,73 @@
           </p>
         </li>
 
-        <li class="skills__item hidden">
+
+
+      </ul>
+
+
+
+
+      <!-- Conteúdo dos Certificados (inicialmente escondido) -->
+      <ul id="certificates-list" class="hidden">
+
+        <li class="certificates__item">
           <div class="image-container">
-            <img src="assets/proteus8.png" alt="CLP" />
+            <img src="assets/ufsc.png" alt="Engenharia" />
           </div>
-          <h3>Proteus</h3>
+          <h3>UFSC - Universidade Federal de Santa Catarina<br> Engenharia de Controle e Automação</h3>
           <p>
-            Domínio em programação de Controladores Lógicos Programáveis (CLP), focando em otimização e controle de
-            processos industriais.
+            Titulado como <span class="highlight">Engenheiro de Controle e Automação</span>, apto a projetar,
+            analisar e usar sistemas de controle e automação aplicados a processos de âmbito
+            doméstico, comercial e industrial. Carga horaria de 4680 Hrs.
           </p>
         </li>
+        <li class="certificates__item">
+          <div class="image-container">
+            <img src="assets/ifc.png" alt="Desenvolvimento Web" />
+          </div>
+          <h3>IFC - Instituto Federal Catarinense<br> Tecnico em Informática</h3>
+          <p>
+            Titulado como <span class="highlight">Técnico de informática</span>, formação profissional
+            para atuar nas diversas áreas de informática, com foco de atuação
+            no desenvolvimento de sistemas, com especificidades em redes, manutenção e suporte
+            de computadores. Carga horaria de 3600 Hrs.
+
+          </p>
+        </li>
+
+        <li class="certificates__item">
+          <div class="image-container">
+            <img src="assets/faculdadeLibano.png" alt="Desenvolvimento Web" />
+          </div>
+          <h3>Faculdade Libano<br> Pós-graduação Produção Industrial</h3>
+          <p>
+            Titulado como <span class="highlight">Pós-graduado em Produção Industrial</span>. Carga horaria de 720
+            Hrs.
+          </p>
+        </li>
+
+        <li class="certificates__item">
+          <div class="image-container">
+            <img src="assets/faculdadeLibano.png" alt="Desenvolvimento Web" />
+          </div>
+          <h3>Faculdade Libano<br> Pós-graduação Automação Industrial</h3>
+          <p>
+            Titulado como <span class="highlight">Pós-graduado em Automação Industrial</span>. Carga horaria de 720
+            Hrs.
+
+          </p>
+        </li>
+
       </ul>
       <button id="show-more" class="btn">Ver Todos</button>
       <button id="show-less" class="btn" style="display: none;">Mostrar Menos</button>
+
+
     </div>
+
   </section>
+
 
   <!-- Projetos -->
   <section id="projects" class="projects max-width">

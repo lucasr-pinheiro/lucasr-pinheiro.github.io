@@ -15,6 +15,11 @@ body {
   margin-top: 15rem;
 }
 
+
+.highlight {
+  color: #7a33ff;
+}
+
 ul {
   list-style: none;
 }
@@ -26,9 +31,13 @@ a {
 
 h1 {
   font-size: 6.4rem;
+  line-height: 1.2;
   font-weight: 700;
   color: var(--primary-color);
+  min-height: 13rem; /* Isso garante espaço para pelo menos 4 linhas */
 }
+
+
 
 .secondary-title {
   font-size: 4rem;
