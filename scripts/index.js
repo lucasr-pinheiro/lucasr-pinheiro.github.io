@@ -225,38 +225,42 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleVisibility(certificateItems, true);
     showMoreButton.style.display = 'none';
   }
-});document.addEventListener('DOMContentLoaded', function() {
+});
+document.addEventListener('DOMContentLoaded', function() {
   const themeToggleButtons = document.querySelectorAll('.theme-toggle');
+  const logoImage = document.getElementById('logo-image');
 
   function updateIcon() {
-    const iconSun = document.querySelector('.fa-sun');
-    const iconMoon = document.querySelector('.fa-moon');
-    const theme = localStorage.getItem('theme');
+      const iconSun = document.querySelector('.fa-sun');
+      const iconMoon = document.querySelector('.fa-moon');
+      const theme = localStorage.getItem('theme');
 
-    if (theme === 'dark') {
-      document.body.setAttribute('data-theme', 'dark');
-      iconSun.style.display = 'none';
-      iconMoon.style.display = 'inline';
-    } else {
-      document.body.removeAttribute('data-theme');
-      iconSun.style.display = 'inline';
-      iconMoon.style.display = 'none';
-    }
+      if (theme === 'dark') {
+          document.body.setAttribute('data-theme', 'dark');
+          iconSun.style.display = 'none';
+          iconMoon.style.display = 'inline';
+          logoImage.src = 'assets/icons/lucas-pinheiro-logo.jpg';  // Logo para tema escuro
+      } else {
+          document.body.removeAttribute('data-theme');
+          iconSun.style.display = 'inline';
+          iconMoon.style.display = 'none';
+          logoImage.src = 'assets/icons/lucas-pinheiro-logo1.jpg';  // Logo original
+      }
   }
 
   themeToggleButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const currentTheme = document.body.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.body.removeAttribute('data-theme');
-        localStorage.setItem('theme', ''); // Save theme choice to LocalStorage
-      } else {
-        document.body.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); // Save theme choice to LocalStorage
-      }
-      updateIcon(); // Updates the icon based on the theme
-    });
+      button.addEventListener('click', function() {
+          const currentTheme = document.body.getAttribute('data-theme');
+          if (currentTheme === 'dark') {
+              document.body.removeAttribute('data-theme');
+              localStorage.setItem('theme', '');  // Salva a escolha do tema no LocalStorage
+          } else {
+              document.body.setAttribute('data-theme', 'dark');
+              localStorage.setItem('theme', 'dark');  // Salva a escolha do tema no LocalStorage
+          }
+          updateIcon();  // Atualiza os ícones e o logo baseado no tema
+      });
   });
 
-  updateIcon(); // Update icons and apply the theme on initial load
+  updateIcon();  // Atualiza os ícones e o logo na inicialização
 });
