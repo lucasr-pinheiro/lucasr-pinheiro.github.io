@@ -1,16 +1,17 @@
 <h1 align="center">Olá 👋, Eu sou Lucas Roberto Pinheiro</h1>
-<h3 align="center">Desenvolvedor full stack</h3>
+<h3 align="center">Esse é meu portifolio</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=lucasr-pinheiro&label=Profile%20views&color=0e75b6&style=flat" alt="lucasr-pinheiro" /> </p>
+- 👨‍💻 Esta disponivel em [https://lucasr-pinheiro.github.io/](https://lucasr-pinheiro.github.io/)
 
-- 🔭 Atualmente estou trabalhando **NodeJs SmartMachine**
+<h2 align="center">Onde voce pode encontrar:</h2>
 
-- 🌱 Estou estudando **Javascript Frameworks**
 
-- 👨‍💻 Meus Projetos estao disponiveis em [https://lucasr-pinheiro.github.io/](https://lucasr-pinheiro.github.io/)
+- 🔭 Projetos
 
-- 💬 Me pergunte sobre **NodeJs**
+- 🌱 Sobre mim
 
-- 📫 Como me encontrar **luckrpinheiro@gmail.com**
+- 💬 Habilidades
 
-- 📄 Saiba sobre mim [www.linkedin.com/in/lucas-pinheiro-86158a221](www.linkedin.com/in/lucas-pinheiro-86158a221)
+- 📫 Formação
+
+- 📄 Contato
