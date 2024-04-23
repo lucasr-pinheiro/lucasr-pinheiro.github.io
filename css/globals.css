@@ -13,11 +13,24 @@ html {
 body {
   font-size: 1.6rem;
   margin-top: 15rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; /* Ajuste conforme necessário */
+  display: inline-flex; /* Usa flexbox para alinhar texto e ícone */
+  flex-direction: column; /* Alinha os ícones verticalmente */
+  align-items: center;
 }
 
 
 .highlight {
-  color: #7a33ff;
+  color: var(--active-link-color);
 }
 
 ul {
@@ -26,7 +39,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--link-color);
 }
 
 h1 {
@@ -34,7 +47,8 @@ h1 {
   line-height: 1.2;
   font-weight: 700;
   color: var(--primary-color);
-  min-height: 13rem; /* Isso garante espaço para pelo menos 4 linhas */
+  min-height: 13rem;
+  /* Isso garante espaço para pelo menos 4 linhas */
 }
 
 

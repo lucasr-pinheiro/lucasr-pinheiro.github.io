@@ -28,7 +28,6 @@
   letter-spacing: .15em;
   animation:
     typing 1.75s steps(40, end),
-    /* Metade da duração original */
     blink-caret .75s step-end infinite;
 }
 
@@ -60,7 +59,7 @@
 
 #job-title,
 .profession-title {
-  color: #7a33ff;
+  color: var(--active-link-color);
 }
 
 header {
@@ -69,6 +68,8 @@ header {
   align-items: center;
   gap: 4rem;
   scroll-margin-top: 20rem;
+  background-color: var(--header-color);
+
 }
 
 header .header__left {
@@ -78,13 +79,9 @@ header .header__left {
 
 h1 {
   font-size: 24px;
-  /* Ajuste o valor conforme necessário para o tamanho desejado */
   line-height: 1.2;
-  /* Ajuste a altura da linha para manter a legibilidade */
   margin: 0;
-  /* Remova a margem padrão do h1 se necessário */
   padding: 0;
-  /* Remova o padding padrão do h1 se necessário */
 }
 
 header .header__left p {

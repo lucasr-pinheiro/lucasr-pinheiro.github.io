@@ -7,7 +7,28 @@
   --dark-secondary-color: #3c415c;
   --tertiary-color: #a6b1e1;
   --light-tertiary-color: #f3f6fb;
-  --text-color: #343d48;
-
   --font-family: 'DM Sans', sans-serif;
+  --background-color: #ffffff;
+  --text-color: #343d48;
+  --link-color: #000000;
+  --header-color: #ffffff;
+  --active-link-color: #7a33ff;
+
+
+}
+
+body[data-theme="dark"] {
+
+  --primary-color: #e0e0e0;
+  --secondary-color: #e0e0e0;
+  --dark-secondary-color: #e08a39;
+  --tertiary-color: #e0de39;
+  --light-tertiary-color: #333;
+  --font-family: 'DM Sans', sans-serif;
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --link-color: #e0e0e0;
+  --header-color: #222222;
+  --active-link-color:#e08a39;
+
 }

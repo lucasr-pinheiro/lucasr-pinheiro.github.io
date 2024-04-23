@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  background-color: var(--white);
+  background-color: var(--header-color);
 }
 
 .navbar .navbar__content {
@@ -35,7 +35,7 @@
 }
 
 .active-link {
-  color: #7a33ff;
+  color: var(--active-link-color);
 }
 
 
@@ -63,7 +63,7 @@
   .navbar .navbar__content .navbar__mobile.active .mobile__links {
     display: flex;
     flex-direction: column;
-    background-color: var(--white);
+    background-color: var(--light-tertiary-color);
     width: 100%;
     position: absolute;
     top: 98%;
@@ -82,4 +82,16 @@
     display: block;
     text-align: center;
   }
+}
+
+.navbar .dropdown .dropdown-content a {
+  display: block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--light-tertiary-color);
+}
+
+.navbar .dropdown .dropdown-content a:first-child {
+  background-color: var(--background-color);
 }

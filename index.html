@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
   <!-- Meta tags -->
   <meta charset="UTF-8" />
@@ -14,19 +15,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-
-
-
-  <style>
-
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
+
 
 <body>
   <!-- navbar -->
   <nav class="navbar">
     <div class="navbar__content max-width mb-0">
+
       <a href="/">
         <img src="assets/icons/lucas-pinheiro-logo.jpg" alt="Lucas Silva" width="160" height="50" />
       </a>
@@ -36,40 +34,66 @@
         <li><a href="#about">Sobre</a></li>
         <li><a href="#skills">Habilidades</a></li>
         <li class="dropdown">
-          <a href="#projects">Projetos</a>
+          <a href="#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
           <div class="dropdown-content">
+            <a href="#projects">Todos</a>
+
             <a href="routes/projeto1.html">Juice Machine</a>
-            <a href="routes/projeto2.html">Supervisorio</a>
+            <a href="routes/projeto2.html">Supervisório</a>
             <a href="routes/projeto3.html">Controle acesso</a>
             <a href="routes/projeto4.html">Controle processo</a>
 
+
           </div>
+
         </li>
         <li><a href="#footer">Contato</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-sun" style="display: none;"></i> <!-- Ícone de sol -->
+            <i class="fas fa-moon" style="display: none;"></i> <!-- Ícone de lua -->
+          </button>
+        </li>
+
+
       </ul>
       <div class="navbar__mobile">
+
         <img src="assets/component/menu.svg" alt="menu" class="burguer" />
         <ul class="mobile__links">
+
           <li><a href="#header">Início</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#skills">Habilidades</a></li>
           <li class="dropdown">
-            <a href="#projects">Projetos</a>
+            <a href="#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
             <div class="dropdown-content">
-              <a href="routes/projeto1.html">Projeto 1</a>
-              <a href="routes/projeto2.html">Projeto 2</a>
-              <a href="routes/projeto3.html">Projeto 3</a>
-              <a href="routes/projeto4.html">Projeto 3</a>
+              <a href="/#projects">Todos</a>
+              <a href="routes/projeto1.html">Juice Machine</a>
+              <a href="routes/projeto2.html">Supervisório</a>
+              <a href="routes/projeto3.html">Controle acesso</a>
+              <a href="routes/projeto4.html">Controle processo</a>
+
 
             </div>
           </li>
           <li><a href="#footer">Contato</a></li>
+          <li>
+            <a class="theme-toggle-link">Alterar Tema
+              <button class="theme-toggle">
+                <i class="fas fa-sun" style="display: none;"></i>
+                <i class="fas fa-moon"></i>
+              </button>
+            </a>
+          </li>
         </ul>
       </div>
+
 
     </div>
     </div>
   </nav>
+
 
   <!-- header -->
   <header id="header" class="max-width">
@@ -81,13 +105,14 @@
       </h1>
       <p>
         Eng. de Controle e Automação | Desenvolvedor web full-stack com vasta experiência em desenvolvimento
-        de aplicações voltadas a industria 4.0 que traz informações do chão de fábrica para que sejam possiveis
+        de aplicações voltadas a indústria 4.0 que traz informações do chão de fábrica para que sejam possíveis
         de serem avaliadas das mais diversas formas. Sou apaixonado por criar
         soluções tecnológicas que resolvem problemas reais e que agregam valor
         aos usuários.
       </p>
       <a href="#about" class="btn btn-primary">Saiba Mais!</a>
     </div>
+
 
     <div class="header__right">
       <div class="header__image">
@@ -96,6 +121,7 @@
       </div>
     </div>
   </header>
+
 
   <!-- Sobre -->
   <section id="about" class="about max-width">
@@ -107,7 +133,8 @@
       </p>
       <ul>
         <li>
-          <a href="https://www.instagram.com/lucasr_pinheiro/"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
+          <a href="https://www.instagram.com/lucasr_pinheiro/"><img src="assets/icons/instagram.svg"
+              alt="Instagram" /></a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/lucas-pinheiro-86158a221/"><img src="assets/icons/linkedin.svg"
@@ -125,26 +152,33 @@
         e gerar soluções criativas.
       </h3>
 
+
       <p>
         Sou formado em Engenharia de Controle e Automação pela UFSC Blumenau, onde desenvolvi uma base sólida tanto em
-        mecânica quanto em elétrica, alem disso possuo formação tecnica em informatica pelo IFSC Camboriu. Minha
+        mecânica quanto em elétrica, além disso possuo formação técnica em informática pelo IFC Camboriú. Minha
         carreira tem foco em encontrar soluções inteligentes para automação e controle, sempre com o objetivo de fazer
-        as coisas funcionarem melhor e mais eficientemente. Sempre estou que possivel estou explorarando novas
-        tecnologias e aplicandos em projetos práticos.
+        as coisas funcionarem melhor e mais eficientemente. Sempre que possível estou explorando novas
+        tecnologias e aplicados em projetos práticos.
+
+
 
 
       </p>
       <p>
         Na parte de desenvolvimento, tenho experiência com API, Node.js, Docker, e bancos de dados SQL e noSQL,
-        JavaScript, HTML e CSS. Alem das tecnologia citadas ja ultizei varias linguaguens de programação na minha
-        carreria, estas habilidades me permitem criar e melhorar sistemas tanto no back-end quanto no front-end. Também
+        JavaScript, HTML e CSS. Alem das tecnologia citadas já utilizei varias linguagens de programação na minha
+        carreira, estas habilidades me permitem criar e melhorar sistemas tanto no back-end quanto no front-end. Também
         sou habilidoso com design e modelagem 3D, usando ferramentas como SolidWorks e Eplan, o que me ajuda a
-        visualizar e criar soluções mecânicas e elétricas complexas que é uma das vertentes da minha formação. Estou
+        Visualizar e criar soluções mecânicas e elétricas complexas é uma das vertentes da minha formação. Estou
         sempre em busca de novos desafios que me permitam utilizar minha paixão por tecnologia e engenharia para
         resolver problemas reais.
       </p>
     </div>
   </section>
+
+
+
+
 
 
 
@@ -155,12 +189,15 @@
       <input type="radio" id="view-skills" name="skills-certificates" checked>
       <label for="view-skills">Habilidades</label>
 
+
       <input type="radio" id="view-certificates" name="skills-certificates">
       <label for="view-certificates">Formação</label>
     </div>
     <div class="skills__content max-width">
 
+
       <ul id="skills-list">
+
 
         <li class="skills__item">
           <div class="image-container">
@@ -255,13 +292,21 @@
 
 
 
+
+
+
       </ul>
+
+
+
+
 
 
 
 
       <!-- Conteúdo dos Certificados (inicialmente escondido) -->
       <ul id="certificates-list" class="hidden">
+
 
         <li class="certificates__item">
           <div class="image-container">
@@ -278,47 +323,57 @@
           <div class="image-container">
             <img src="assets/icons/ifc.png" alt="Desenvolvimento Web" />
           </div>
-          <h3>IFC - Instituto Federal Catarinense<br> Tecnico em Informática</h3>
+          <h3>IFC - Instituto Federal Catarinense<br> Técnico em Informática</h3>
           <p>
             Titulado como <span class="highlight">Técnico de informática</span>, formação profissional
             para atuar nas diversas áreas de informática, com foco de atuação
             no desenvolvimento de sistemas, com especificidades em redes, manutenção e suporte
-            de computadores. Carga horaria de 3600 Hrs.
+            de computadores. Carga horária de 3600 Hrs.
+
 
           </p>
         </li>
+
 
         <li class="certificates__item">
           <div class="image-container">
             <img src="assets/icons/faculdadeLibano.png" alt="Desenvolvimento Web" />
           </div>
-          <h3>Faculdade Libano<br> Pós-graduação Produção Industrial</h3>
+          <h3>Faculdade Líbano<br> Pós-graduação Produção Industrial</h3>
           <p>
-            Titulado como <span class="highlight">Pós-graduado em Produção Industrial</span>. Carga horaria de 720
+            Titulado como <span class="highlight">Pós-graduado em Produção Industrial</span>. Carga horária de 720
             Hrs.
           </p>
         </li>
+
 
         <li class="certificates__item">
           <div class="image-container">
             <img src="assets/icons/faculdadeLibano.png" alt="Desenvolvimento Web" />
           </div>
-          <h3>Faculdade Libano<br> Pós-graduação Automação Industrial</h3>
+          <h3>Faculdade Líbano<br> Pós-graduação Automação Industrial</h3>
           <p>
-            Titulado como <span class="highlight">Pós-graduado em Automação Industrial</span>. Carga horaria de 720
+            Titulado como <span class="highlight">Pós-graduado em Automação Industrial</span>. Carga horária de 720
             Hrs.
+
 
           </p>
         </li>
+
 
       </ul>
       <button id="show-more" class="btn">Ver Todos</button>
       <button id="show-less" class="btn" style="display: none;">Mostrar Menos</button>
 
 
+
+
     </div>
 
+
   </section>
+
+
 
 
   <!-- Projetos -->
@@ -338,7 +393,7 @@
         </div>
         <div class="projects__info">
           <h3 class="tertiary-title">
-            Projeto Mecatronico - Juice Machine
+            Projeto Mecatrônico - Juice Machine
           </h3>
           <p>
             Fabricação de uma máquina capaz de automatizar e controlar com maior precisão a preparação de sucos à base
@@ -347,21 +402,23 @@
           <!-- Adicionando ícones das tecnologias com estilo de habilidades -->
           <div class="technology-icons">
             <div class="image-container">
-              <img src="assets/icons/solidworks.png" alt="Python" />
+              <img src="assets/icons/solidworks.png" alt="SolidWorks" />
             </div>
             <div class="image-container">
-              <img src="assets/icons/clp.png" alt="MySQL" />
+              <img src="assets/icons/clp.png" alt="CLP" />
             </div>
-
             <div class="image-container">
-              <img src="assets/icons/proteus8.png" alt="MySQL" />
+              <img src="assets/icons/proteus8.png" alt="Proteus 8" />
             </div>
           </div>
 
+          <a href="routes/projeto1.html" id="leiaMaisProjeto">Leia mais &rarr;</a>
 
-          <a href="#">Leia mais &rarr;</a>
         </div>
       </li>
+
+
+
 
 
       <li class="projects__reversed-list">
@@ -370,14 +427,15 @@
         </div>
         <div class="projects__info">
           <h3 class="tertiary-title">
-            Desenvolvimento de Sistema Supervisorio para Maquinas
+            Desenvolvimento de Sistema Supervisório para Maquinas
           </h3>
           <p>
             Website desenvolvido do zero com tecnologias como React
-            e Node.js, para criar dahsboards que possibilitam a analise de dados de Eficiencia e Produção de
+            e Node.js, para criar dashboards que possibilitam a analise de dados de Eficiência e Produção de
             equipamentos
             industriais.
           </p>
+
 
           <!-- Adicionando ícones das tecnologias com estilo de habilidades -->
           <div class="technology-icons">
@@ -388,20 +446,24 @@
               <img src="assets/icons/clp.png" alt="MySQL" />
             </div>
 
+
             <div class="image-container">
               <img src="assets/icons/proteus8.png" alt="MySQL" />
             </div>
+
+
 
 
             <div class="image-container">
               <img src="assets/icons/iot.png" alt="MySQL" />
             </div>
 
+
             <div class="image-container">
               <img src="assets/icons/notebook.png" alt="MySQL" />
             </div>
           </div>
-          <a href="#">Leia mais &rarr;</a>
+          <a href="routes/projeto2.html" id="leiaMaisProjeto1">Leia mais &rarr;</a>
         </div>
       </li>
       <li>
@@ -414,8 +476,9 @@
           </h3>
           <p>
             Software desenvolvido como alternativa para controle de acesso predial, é um sistema de cadastro o
-            qual o usuario deve possuir tanto autenticação facial quanto biometrica para liberação de acesso.
+            qual o usuario deve possuir tanto autenticação facial quanto biométrica para liberação de acesso.
           </p>
+
 
           <!-- Adicionando ícones das tecnologias com estilo de habilidades -->
           <div class="technology-icons">
@@ -426,15 +489,19 @@
               <img src="assets/icons/clp.png" alt="MySQL" />
             </div>
 
+
             <div class="image-container">
               <img src="assets/icons/mysql.png" alt="MySQL" />
             </div>
 
 
+
+
           </div>
-          <a href="#">Leia mais &rarr;</a>
+          <a href="routes/projeto3.html" id="leiaMaisProjeto">Leia mais &rarr;</a>
         </div>
       </li>
+
 
       <li class="projects__reversed-list">
         <div class="image">
@@ -457,24 +524,29 @@
               <img src="assets/icons/clp.png" alt="MySQL" />
             </div>
 
+
             <div class="image-container">
               <img src="assets/icons/proteus8.png" alt="MySQL" />
             </div>
+
+
 
 
             <div class="image-container">
               <img src="assets/icons/iot.png" alt="MySQL" />
             </div>
 
+
             <div class="image-container">
               <img src="assets/icons/notebook.png" alt="MySQL" />
             </div>
           </div>
-          <a href="#">Leia mais &rarr;</a>
+          <a href="routes/projeto4.html" id="leiaMaisProjeto">Leia mais &rarr;</a>
         </div>
       </li>
     </ul>
   </section>
+
 
   <!-- Footer -->
   <footer id="footer">
@@ -489,7 +561,8 @@
       </div>
       <ul class="mb-l">
         <li>
-          <a href="https://www.instagram.com/lucasr_pinheiro/"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
+          <a href="https://www.instagram.com/lucasr_pinheiro/"><img src="assets/icons/instagram.svg"
+              alt="Instagram" /></a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/lucas-pinheiro-86158a221/"><img src="assets/icons/linkedin.svg"
@@ -507,5 +580,6 @@
   <!-- script -->
   <script src="scripts/index.js"></script>
 </body>
+
 
 </html>
