@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/lucasr-pinheiro.github.io/static/css/main.f855e6bc.css",
-    "main.js": "/lucasr-pinheiro.github.io/static/js/main.9967aa2f.js",
-    "static/js/453.6545556d.chunk.js": "/lucasr-pinheiro.github.io/static/js/453.6545556d.chunk.js",
-    "static/media/logo.svg": "/lucasr-pinheiro.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/lucasr-pinheiro.github.io/index.html",
-    "main.f855e6bc.css.map": "/lucasr-pinheiro.github.io/static/css/main.f855e6bc.css.map",
-    "main.9967aa2f.js.map": "/lucasr-pinheiro.github.io/static/js/main.9967aa2f.js.map",
-    "453.6545556d.chunk.js.map": "/lucasr-pinheiro.github.io/static/js/453.6545556d.chunk.js.map"
+    "main.css": "/react-gh-pages/static/css/main.f855e6bc.css",
+    "main.js": "/react-gh-pages/static/js/main.cd52752f.js",
+    "static/js/453.6545556d.chunk.js": "/react-gh-pages/static/js/453.6545556d.chunk.js",
+    "static/media/logo.svg": "/react-gh-pages/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.f855e6bc.css.map": "/react-gh-pages/static/css/main.f855e6bc.css.map",
+    "main.cd52752f.js.map": "/react-gh-pages/static/js/main.cd52752f.js.map",
+    "453.6545556d.chunk.js.map": "/react-gh-pages/static/js/453.6545556d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.9967aa2f.js"
+    "static/js/main.cd52752f.js"
   ]
 }
