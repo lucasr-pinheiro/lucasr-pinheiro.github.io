@@ -13,28 +13,34 @@ mobileLinks.forEach(link => {
     mobileNavbar.classList.remove('active'); // This will close the mobile menu
   });
 });
-
-
-window.addEventListener('scroll', function () {
-
-  if (this.window.pageYOffset > 0) return navbar.classList.add('active');
-  return navbar.classList.remove('active');
-});
 document.addEventListener('DOMContentLoaded', function () {
-  // Selecionar o link do menu de Projetos
   var projectsLink = document.getElementById('projects-link');
+  var mobileProjectsLink = document.querySelector('.mobile__links .dropdown a');
 
-  // Verificar se a URL atual inclui qualquer projeto específico
-  if (window.location.pathname.includes('projeto')) {
-    projectsLink.classList.add('active-link'); // Adiciona a classe 'active-link' ao link de Projetos
+  function updateProjectLinksActiveClass(projectsLink, projectsDropdown) {
+    if (projectsLink) {
+      projectsLink.classList.add('active-link');
+      projectsDropdown.querySelectorAll('a').forEach(subLink => {
+        if (window.location.pathname.includes(subLink.getAttribute('href'))) {
+          subLink.classList.add('active-link');
+        }
+      });
+    }
+  }
+
+  if (window.location.pathname.includes('proje')) {
+    const projectsDropdown = projectsLink.nextElementSibling;
+    updateProjectLinksActiveClass(projectsLink, projectsDropdown);
+    const mobileProjectsDropdown = mobileProjectsLink.nextElementSibling;
+    updateProjectLinksActiveClass(mobileProjectsLink, mobileProjectsDropdown);
   }
 
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.navbar__links a, .mobile__links a');
-  let lastId; // Guarda o último id para evitar atualizações desnecessárias
+  let lastId;
 
   function addActiveClass(section) {
-    if (section && section.id !== lastId) { // Verifica se a seção é válida e diferente da última ativa
+    if (section && section.id !== lastId) {
       lastId = section.id;
       navLinks.forEach(link => {
         link.classList.remove('active-link');
@@ -42,9 +48,19 @@ document.addEventListener('DOMContentLoaded', function () {
           link.classList.add('active-link');
         }
       });
-      // Atualiza a URL sem recarregar a página
-      history.pushState(null, null, '#' + section.id);
+      if (window.location.pathname === '/') {
+        history.pushState(null, null, '#' + section.id);
+      }
     }
+  }
+
+  // Ativar a classe para #header no carregamento da página se a URL for padrão
+  if (window.location.pathname === '/' || window.location.pathname === '') {
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === '#header') {
+        link.classList.add('active-link');
+      }
+    });
   }
 
   function getCurrentSection() {
@@ -55,13 +71,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const sectionTop = section.offsetTop - window.scrollY;
       const sectionHeight = section.offsetHeight;
 
-      // Verifica se o usuário está no topo da página
       if (window.scrollY < 100) {
         currentSection = document.querySelector('header') || sections[0];
         return;
       }
 
-      // Verifica se o usuário está no final da página
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         currentSection = document.querySelector('footer') || sections[sections.length - 1];
         return;
@@ -78,6 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('scroll', () => {
     const currentSection = getCurrentSection();
+
+    if (window.location.pathname.includes('proje')) {
+      updateProjectLinksActiveClass(projectsLink, projectsLink.nextElementSibling);
+      updateProjectLinksActiveClass(mobileProjectsLink, mobileProjectsLink.nextElementSibling);
+    }
+
     addActiveClass(currentSection);
   });
 
@@ -91,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
