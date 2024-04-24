@@ -21,6 +21,7 @@
   margin-right: 2rem;
 }
 
+
 .navbar .navbar__content .navbar__links a {
   padding: 1rem;
   display: inline-block;
@@ -35,8 +36,21 @@
 }
 
 .active-link {
-  color: var(--active-link-color);
+  position: relative; /* Essential for positioning the pseudo-element correctly */
+  padding-bottom: 3px; /* Add padding to avoid clipping the text with the underline */
 }
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--active-link-color);
+  display: block;
+}
+
 
 
 .navbar .navbar__content .navbar__mobile,
@@ -52,6 +66,7 @@
   .navbar .navbar__content .navbar__mobile {
     display: flex;
     align-items: center;
+    
   }
 
   .navbar .navbar__content .navbar__mobile img {
@@ -59,6 +74,11 @@
     height: 3.6rem;
     cursor: pointer;
   }
+
+  .navbar .navbar__content .navbar__mobile a:hover {
+    background-color: var(--background-color);
+  }
+  
 
   .navbar .navbar__content .navbar__mobile.active .mobile__links {
     display: flex;

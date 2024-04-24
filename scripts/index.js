@@ -1,11 +1,18 @@
 const navbar = document.querySelector('.navbar');
 const mobileNavbar = document.querySelector('.navbar__mobile');
 const button = document.querySelector('.burguer');
+const mobileLinks = document.querySelectorAll('.mobile__links a'); // Select all links within the mobile navigation
 
 button.addEventListener('click', function () {
   mobileNavbar.classList.toggle('active');
 });
 
+// Close mobile navigation when a link is clicked
+mobileLinks.forEach(link => {
+  link.addEventListener('click', function () {
+    mobileNavbar.classList.remove('active'); // This will close the mobile menu
+  });
+});
 
 
 window.addEventListener('scroll', function () {

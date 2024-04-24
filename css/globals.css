@@ -17,16 +17,20 @@ body {
   color: var(--text-color);
 }
 
-
 .theme-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 24px; /* Ajuste conforme necessário */
-  display: inline-flex; /* Usa flexbox para alinhar texto e ícone */
-  flex-direction: column; /* Alinha os ícones verticalmente */
+  font-size: 16px;  /* Match font size with other nav links */
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem; /* Match padding with other dropdown items */
+  color: inherit; /* Inherits the text color from parent */
+  width: 100%; /* Ensures it fills the dropdown area */
+  text-decoration: none; /* Removes underline effect if any */
 }
+
 
 
 .highlight {
