@@ -16,6 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/icons/lp-logo.jpg" type="image/x-icon" />
 
 
   <style>
@@ -24,11 +26,11 @@
 
 </head>
 
-<body>  <!-- navbar -->
+<body> <!-- navbar -->
   <nav class="navbar">
     <div class="navbar__content max-width mb-0">
       <a href="/">
-        <img src="../assets/icons/lucas-pinheiro-logo.jpg" alt="Lucas Silva" width="160" height="50" />
+        <img id="logo-image" src="../assets/icons/lucas-pinheiro-logo.jpg" alt="Lucas Silva" width="160" height="50" />
       </a>
 
       <ul class="navbar__links">
@@ -36,7 +38,7 @@
         <li><a href="/#about">Sobre</a></li>
         <li><a href="/#skills">Habilidades</a></li>
         <li class="dropdown">
-          <a href="/#projects">Projetos &#9662;</a> 
+          <a id="projects-link" href="/#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
           <div class="dropdown-content">
             <a href="/#projects">Todos</a>
 
@@ -63,14 +65,15 @@
           <li><a href="/#about">Sobre</a></li>
           <li><a href="/#skills">Habilidades</a></li>
           <li class="dropdown">
-            <a href="/#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
+            <a id="projects-link" href="/#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
             <div class="dropdown-content">
               <a href="/#projects">Todos</a>
+  
               <a href="projeto1.html">Juice Machine</a>
               <a href="projeto2.html">Supervisorio</a>
               <a href="projeto3.html">Controle acesso</a>
               <a href="projeto4.html">Controle processo</a>
-
+  
             </div>
           </li>
           <li><a href="/#footer">Contato</a></li>
@@ -78,7 +81,7 @@
             <a class="theme-toggle-link">Alterar Tema
               <button class="theme-toggle">
                 <i class="fas fa-sun" style="display: none;"></i>
-                <i class="fas fa-moon"style="display: none;"></i>
+                <i class="fas fa-moon" style="display: none;"></i>
               </button>
             </a>
           </li>
@@ -158,7 +161,7 @@
     </div>
   </footer>
   <!-- script -->
-  <script src="../scripts/projects.js"></script>
+  <script src="../scripts/index.js"></script>
 </body>
 
 </html>

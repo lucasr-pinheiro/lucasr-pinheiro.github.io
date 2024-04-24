@@ -18,6 +18,8 @@
 
 
 
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/icons/lp-logo.jpg" type="image/x-icon" />
   <style>
 
   </style>
@@ -29,7 +31,7 @@
   <nav class="navbar">
     <div class="navbar__content max-width mb-0">
       <a href="/">
-        <img src="../assets/icons/lucas-pinheiro-logo.jpg" alt="Lucas Silva" width="160" height="50" />
+        <img id="logo-image" src="../assets/icons/lucas-pinheiro-logo.jpg" alt="Lucas Silva" width="160" height="50" />
       </a>
 
       <ul class="navbar__links">
@@ -37,7 +39,7 @@
         <li><a href="/#about">Sobre</a></li>
         <li><a href="/#skills">Habilidades</a></li>
         <li class="dropdown">
-          <a href="/#projects">Projetos &#9662;</a> 
+          <a id="projects-link" href="/#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
           <div class="dropdown-content">
             <a href="/#projects">Todos</a>
 
@@ -64,14 +66,15 @@
           <li><a href="/#about">Sobre</a></li>
           <li><a href="/#skills">Habilidades</a></li>
           <li class="dropdown">
-            <a href="/#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
+            <a id="projects-link" href="/#projects">Projetos &#9662;</a> <!-- Unicode for down arrow -->
             <div class="dropdown-content">
               <a href="/#projects">Todos</a>
+  
               <a href="projeto1.html">Juice Machine</a>
               <a href="projeto2.html">Supervisorio</a>
               <a href="projeto3.html">Controle acesso</a>
               <a href="projeto4.html">Controle processo</a>
-
+  
             </div>
           </li>
           <li><a href="/#footer">Contato</a></li>
@@ -156,7 +159,7 @@
     </div>
   </footer>
   <!-- script -->
-  <script src="../scripts/projects.js"></script>
+  <script src="../scripts/index.js"></script>
 </body>
 
 </html>

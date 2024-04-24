@@ -68,7 +68,6 @@ header {
   align-items: center;
   gap: 4rem;
   scroll-margin-top: 20rem;
-  background-color: var(--header-color);
 
 }
 

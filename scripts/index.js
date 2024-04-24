@@ -9,11 +9,19 @@ button.addEventListener('click', function () {
 
 
 window.addEventListener('scroll', function () {
+
   if (this.window.pageYOffset > 0) return navbar.classList.add('active');
   return navbar.classList.remove('active');
 });
 document.addEventListener('DOMContentLoaded', function () {
-  
+  // Selecionar o link do menu de Projetos
+  var projectsLink = document.getElementById('projects-link');
+
+  // Verificar se a URL atual inclui qualquer projeto específico
+  if (window.location.pathname.includes('projeto')) {
+    projectsLink.classList.add('active-link'); // Adiciona a classe 'active-link' ao link de Projetos
+  }
+
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.navbar__links a, .mobile__links a');
   let lastId; // Guarda o último id para evitar atualizações desnecessárias
@@ -133,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const showMoreButton = document.getElementById('show-more');
   const showLessButton = document.getElementById('show-less');
   const skillItems = document.querySelectorAll('.skills__item');
@@ -173,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const viewSkills = document.getElementById('view-skills');
   const viewCertificates = document.getElementById('view-certificates');
   const skillsList = document.getElementById('skills-list');
@@ -197,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  viewSkills.addEventListener('change', function() {
+  viewSkills.addEventListener('change', function () {
     if (this.checked) {
       toggleVisibility(skillItems, true, 4); // Exibe apenas as 4 primeiras habilidades
       toggleVisibility(certificateItems, false);
@@ -206,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  viewCertificates.addEventListener('change', function() {
+  viewCertificates.addEventListener('change', function () {
     if (this.checked) {
       toggleVisibility(skillItems, false);
       toggleVisibility(certificateItems, true);
@@ -226,40 +234,41 @@ document.addEventListener('DOMContentLoaded', function() {
     showMoreButton.style.display = 'none';
   }
 });
-document.addEventListener('DOMContentLoaded', function() {
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
   const themeToggleButtons = document.querySelectorAll('.theme-toggle');
   const logoImage = document.getElementById('logo-image');
 
   function updateIcon() {
-      const iconSun = document.querySelector('.fa-sun');
-      const iconMoon = document.querySelector('.fa-moon');
-      const theme = localStorage.getItem('theme');
+    const iconsSun = document.querySelectorAll('.fa-sun');
+    const iconsMoon = document.querySelectorAll('.fa-moon');
+    const theme = localStorage.getItem('theme');
 
-      if (theme === 'dark') {
-          document.body.setAttribute('data-theme', 'dark');
-          iconSun.style.display = 'none';
-          iconMoon.style.display = 'inline';
-          logoImage.src = 'assets/icons/lucas-pinheiro-logo.jpg';  // Logo para tema escuro
-      } else {
-          document.body.removeAttribute('data-theme');
-          iconSun.style.display = 'inline';
-          iconMoon.style.display = 'none';
-          logoImage.src = 'assets/icons/lucas-pinheiro-logo1.jpg';  // Logo original
-      }
+    iconsSun.forEach(iconSun => {
+      iconSun.style.display = theme === 'dark' ? 'none' : 'inline';
+    });
+    iconsMoon.forEach(iconMoon => {
+      iconMoon.style.display = theme === 'dark' ? 'inline' : 'none';
+    });
+
+    if (theme === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      logoImage.src = '../assets/icons/lucas-pinheiro-logo.jpg';  // Logo para tema escuro
+    } else {
+      document.body.removeAttribute('data-theme');
+      logoImage.src = '../assets/icons/lucas-pinheiro-logo1.jpg';  // Logo original
+    }
   }
 
   themeToggleButtons.forEach(button => {
-      button.addEventListener('click', function() {
-          const currentTheme = document.body.getAttribute('data-theme');
-          if (currentTheme === 'dark') {
-              document.body.removeAttribute('data-theme');
-              localStorage.setItem('theme', '');  // Salva a escolha do tema no LocalStorage
-          } else {
-              document.body.setAttribute('data-theme', 'dark');
-              localStorage.setItem('theme', 'dark');  // Salva a escolha do tema no LocalStorage
-          }
-          updateIcon();  // Atualiza os ícones e o logo baseado no tema
-      });
+    button.addEventListener('click', function () {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      document.body.setAttribute('data-theme', isDark ? '' : 'dark');
+      localStorage.setItem('theme', isDark ? '' : 'dark');  // Salva a escolha do tema no LocalStorage
+      updateIcon();  // Atualiza os ícones e o logo baseado no tema
+    });
   });
 
   updateIcon();  // Atualiza os ícones e o logo na inicialização
